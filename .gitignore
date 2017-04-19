@@ -1,3 +1,6 @@
+# local site
+_site/
+
 ## DS Store be banished
 .DS_Store
 

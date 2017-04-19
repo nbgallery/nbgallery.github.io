@@ -1,3 +1,6 @@
 theme: jekyll-theme-cayman
 title: nbgallery 
 description: An enterprise Jupyter Notebook sharing and collaboration platform
+
+# Google analytics
+google_analytics: UA-97654825-1
