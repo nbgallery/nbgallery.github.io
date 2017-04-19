@@ -16,9 +16,9 @@ To do this we created nbgallery, which acts as a web-based visual middleman betw
 
 nbgallery allows for a Jupyter execution environment that is independent from the notebook sharing platform.  Bidirectional integration allows users to run a notebook from an nbgallery server into an independent Jupyter instance, or in reverse, save a notebook from a Jupyter instance to an nbgallery server.  
 
-![integration]({{ site.url }}/assets/Client_Upload_to_Gallery.png)
+![client_integration]({{ site.url }}/assets/Client_Upload_to_Gallery.png "Upload notebook from Juptyer")
 
-![integration]({{ site.url }}/assets/nbgallery_Run_in_Jupyter_Banner.png)
+![nbgallery_integration]({{ site.url }}/assets/nbgallery_Run_in_Jupyter_Banner.png "Run notebook from nbgallery")
 
 Since in many cases the data used within a notebook may be sensitive, the integration features automatically strip all notebook output before the notebook can be shared in nbgallery.  This ensures output stays isolated to the user running the notebook, while ensuring the broadest possible sharing of the analytic itself.
 
