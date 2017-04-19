@@ -2,6 +2,8 @@
 
 [nbgallery](https://github.com/nbgallery/nbgallery) is an enterprise Jupyter Notebook sharing and collaboration platform with a goal of making it easier for data scientists and analysts to create, collaborate on, and run code-based analytics.
 
+![nbgallery screenshot](https://cloud.githubusercontent.com/assets/8132519/23445445/9f48c65e-fdf8-11e6-8ef0-d9cb7942b870.png)
+
 ## Our Story
 
 As huge fans of iPython/Jupyter, we wanted to be able to easily share and collaborate on Jupyter Notebooks across a large, distributed enterprise.  Specifically, we wanted to empower “citizen data scientists” - those who have the aptitude, curiosity, and creativity to explore data but lack the formal education and technical background of data scientists or computer programmers.
