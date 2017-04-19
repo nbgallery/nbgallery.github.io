@@ -16,10 +16,6 @@ To do this we created nbgallery, which acts as a web-based visual middleman betw
 
 nbgallery allows for a Jupyter execution environment that is independent from the notebook sharing platform.  Bidirectional integration allows users to run a notebook from an nbgallery server into an independent Jupyter instance, or in reverse, save a notebook from a Jupyter instance to an nbgallery server.  
 
-![client_integration]({{ site.url }}/assets/Client_Upload_to_Gallery.png "Upload notebook from Juptyer")
-
-![nbgallery_integration]({{ site.url }}/assets/nbgallery_Run_in_Jupyter_Banner.png "Run notebook from nbgallery")
-
 Since in many cases the data used within a notebook may be sensitive, the integration features automatically strip all notebook output before the notebook can be shared in nbgallery.  This ensures output stays isolated to the user running the notebook, while ensuring the broadest possible sharing of the analytic itself.
 
 We built and maintain a Jupyter Docker image that contains all of the integration capabilities to interact with an nbgallery server.  However we’ve also developed a Python package (called [jupyter-nbgallery](https://pypi.python.org/pypi/jupyter-nbgallery)) which adds nbgallery integration into any existing Jupyter or JupyterHub server.  This allows those who are happy with their existing Jupyter computer environment to still integrate with an nbgallery server.
@@ -34,6 +30,6 @@ Ultimately, the value we see for this effort is empowering users from a wide-var
 
 # Jupyter-Docker
 
-One of our use-cases involves the use of personal ephemeral (i.e. short-lived) computer environments.  As a result, the time and speed it takes to install Jupyter within that environment was a very important factor to us.  To address this we have developed a minimal [Jupyter Docker image (<250MBs)](https://hub.docker.com/r/nbgallery/jupyter-alpine/) based on Alpine Linux.  This minimal image offers a dozen language kernels, most of which are installed dynamically when the user tries to open a new notebook in that language.  This avoids potentially ballooning the size of the image by trying to “bake in” each and every language kernel.
+One of our use-cases involves the use of personal ephemeral (i.e. short-lived) compute environments.  As a result, the time and speed it takes to install Jupyter within that environment was a very important factor to us.  To address this we have developed a minimal [Jupyter Docker image (<250MBs)](https://hub.docker.com/r/nbgallery/jupyter-alpine/) based on Alpine Linux.  This minimal image offers a dozen language kernels, most of which are installed dynamically when the user tries to open a new notebook in that language.  This avoids potentially ballooning the size of the image by trying to “bake in” each and every language kernel.
 
 To maintain such a small image we also couldn’t include every possible language library that an analytic author might need.  Since many notebooks do require language libraries, we’ve created capabilities for both [Python](https://github.com/nbgallery/ipydeps) and [Ruby](https://github.com/nbgallery/iruby-dependencies) to allow language and OS dependencies to be installed on the fly when a user runs the notebook.  This means that users operating in these ephemeral environments do not have to know how to install packages from the command line in order to successfully execute the code within a nbgallery-hosted notebook.
