@@ -14,7 +14,11 @@ We wanted to make that easier.  For starters, we felt that required the use of c
 
 To do this we created nbgallery, which acts as a web-based visual middleman between the user and a remote git repo.  It provides simplified access for non-technical users to search, discover, use and collaborate on code-based analytics.
 
-nbgallery allows for a Jupyter execution environment that is independent from the notebook sharing platform.  Bidirectional integration allows users to run a notebook from an nbgallery server into an independent Jupyter instance, or in reverse, save a notebook from a Jupyter instance to an nbgallery server.  Since in many cases the data used within a notebook may be sensitive, the integration features automatically strip all notebook output before the notebook can be shared in nbgallery.  This ensures output stays isolated to the user running the notebook, while ensuring the broadest possible sharing of the analytic itself.
+nbgallery allows for a Jupyter execution environment that is independent from the notebook sharing platform.  Bidirectional integration allows users to run a notebook from an nbgallery server into an independent Jupyter instance, or in reverse, save a notebook from a Jupyter instance to an nbgallery server.  
+
+![integration]({{ site.url }}/assets/Client_Upload_to_Gallery.png)
+
+Since in many cases the data used within a notebook may be sensitive, the integration features automatically strip all notebook output before the notebook can be shared in nbgallery.  This ensures output stays isolated to the user running the notebook, while ensuring the broadest possible sharing of the analytic itself.
 
 We built and maintain a Jupyter Docker image that contains all of the integration capabilities to interact with an nbgallery server.  However we’ve also developed a Python package (called [jupyter-nbgallery](https://pypi.python.org/pypi/jupyter-nbgallery)) which adds nbgallery integration into any existing Jupyter or JupyterHub server.  This allows those who are happy with their existing Jupyter computer environment to still integrate with an nbgallery server.
 
