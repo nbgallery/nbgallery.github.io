@@ -1,7 +1,7 @@
 # Recommending Notebooks within nbgallery
 {:.no_toc}
 
-Several members of our team had experience from previous projects with user-submitted code, so we anticipated that code duplication could be a potential problem.  To help minimize duplication, we’ve put a lot of effort into discoverability of notebooks - full-text search, tagging, useful metrics for sorting, and our recommender system.
+Several members of our team had experience from previous projects with user-submitted code, so we anticipated that code duplication could be a potential problem.  To help minimize duplication, we’ve put a lot of effort into discoverability of notebooks - full-text search, tagging, useful metrics for sorting, and our [recommender system](https://en.wikipedia.org/wiki/Recommender_system).
 
 * TOC
 {:toc}
@@ -12,21 +12,21 @@ First let’s talk about some of the components that feed into our recommender s
 
 ## User similarity
 
-This measures how similar two users are based on the notebooks they’ve viewed.  To compute this, we first build a vector to represent each user’s activity in the Gallery.  Each user’s vector contains an entry for every notebook, with v[notebook id] = log(number of times they’ve viewed the notebook in the last 90 days) + (bonus 1.0 if the user has starred the notebook).  The 90-day cut-off helps account for changes in the user’s current duties, interests etc.  From eyeballing some of the vectors, typical values tend to fall between 0 and 4, with some outliers from notebook authors repeatedly viewing their own notebooks as they work on them.  After building the feature vectors, we use cosine similarity to yield a score between 0 and 1 for each pair of users.
+This measures how similar two users are based on the notebooks they’ve viewed.  To compute this, we first build a vector to represent each user’s activity in the Gallery.  Each user’s vector contains an entry for every notebook, with v[notebook id] = log(number of times they’ve viewed the notebook in the last 90 days) + (bonus 1.0 if the user has starred the notebook).  The 90-day cut-off helps account for changes in the user’s current duties, interests etc.  From eyeballing some of the vectors, typical values tend to fall between 0 and 4, with some outliers from notebook authors repeatedly viewing their own notebooks as they work on them.  After building the feature vectors, we use [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity) to yield a score between 0 and 1 for each pair of users.
 
 ## Notebook similarity.
 
 This measures how similar two notebooks are based on the content of the notebooks.  You can see the results of this computation in nbgallery in the “More Like This” section at the top of each notebook.
 
-A common way to measure content similarity is to build a TF-IDF matrix for the corpus and then use something like cosine similarity to compare the vectors for each document.  This was our initial approach as well, as we built our corpus from the code, markdown, title, and description of each notebook.  However, we ran into performance problems with the Ruby package we were using for the computation.  We believe this was at least in part because we included the code in the corpus, which was causing the number of terms to far exceed what it would be with just English text.  Our matrix was roughly 1000 documents by 75,000 terms, and the Ruby package often ran out of memory while processing it.  Fortunately, we are using Apache Solr for our full-text search engine, and it provides a “more like this” function based on TF-IDF.  Although we don’t get a numeric score from Solr like we used to from running TF-IDF ourselves, it was fairly easy for us to switch over to it and the results are similar to our previous implementation.
+A common way to measure content similarity is to build a [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) matrix for the corpus and then use something like cosine similarity to compare the vectors for each document.  This was our initial approach as well, as we built our corpus from the code, markdown, title, and description of each notebook.  However, we ran into performance problems with the Ruby package we were using for the computation.  We believe this was at least in part because we included the code in the corpus, which was causing the number of terms to far exceed what it would be with just English text.  Our matrix was roughly 1000 documents by 75,000 terms, and the Ruby package often ran out of memory while processing it.  Fortunately, we are using Apache Solr for our full-text search engine, and it provides a “more like this” function based on TF-IDF.  Although we don’t get a numeric score from Solr like we used to from running TF-IDF ourselves, it was fairly easy for us to switch over to it and the results are similar to our previous implementation.
 
-We also worked with Lab41 on their Altair challenge for semantic understanding of code and measuring code similarity.  They explored a variety of algorithms, and one interesting quirk they found with the TF-IDF approach is a bias towards notebooks written by the same author - perhaps due to personal coding style and choice of variable names.  Despite this, they found that TF-IDF was more or less the state of the art for this problem.  They had some ideas for improving the results with deep learning techniques, but unfortunately the challenge ended before they could investigate further.
+We also worked with [Lab41](http://www.lab41.org/) on their [Altair challenge](https://github.com/Lab41/altair) for semantic understanding of code and measuring code similarity.  They explored a variety of algorithms, and one interesting quirk they found with the TF-IDF approach is a bias towards notebooks written by the same author - perhaps due to personal coding style and choice of variable names.  Despite this, they found that TF-IDF was more or less the state of the art for this problem.  They had some ideas for [improving the results with deep learning techniques](https://gab41.lab41.org/doc2vec-to-assess-semantic-similarity-in-source-code-667acb3e62d7), but unfortunately the challenge ended before they could investigate further.
 
 ## Users also viewed
 
 This measures how similar two notebooks are based on what users are visiting them rather than the content of the notebooks.  You could see the results of this computation in nbgallery under the Users Also Viewed section at the top of each notebook.
 
-We compute this using the Jaccard index on the sets of users that viewed each notebook.  We initially tried using raw view counts, but that caused various introductory and best-practice notebooks (which many users tend to view at least once) to end up on top.  We tried to correct for that but ended up promoting “rare” notebooks viewed by very few users.  The Jaccard index turned out to be much simpler to compute and provided a good balance between the two extremes.
+We compute this using the [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) on the sets of users that viewed each notebook.  We initially tried using raw view counts, but that caused various introductory and best-practice notebooks (which many users tend to view at least once) to end up on top.  We tried to correct for that but ended up promoting “rare” notebooks viewed by very few users.  The Jaccard index turned out to be much simpler to compute and provided a good balance between the two extremes.
 
 ## Trendiness
 
@@ -34,7 +34,7 @@ This measures a notebook’s popularity as a function of users views and time.  
 
 # Recommendation Algorithms
 
-In our early discussions about how we would do personalized recommendations, we felt that we’d get better results if we combined different algorithms into a hybrid system.  We came up with several approaches, including traditional collaborative and content-based techniques.
+In our early discussions about how we would do personalized recommendations, we felt that we’d get better results if we combined different algorithms into a hybrid system.  We came up with several approaches, including traditional [collaborative](https://en.wikipedia.org/wiki/Recommender_system#Collaborative_filtering) and [content-based](https://en.wikipedia.org/wiki/Recommender_system#Content-based_filtering) techniques.
 
 ## Similar users
 
