@@ -1,9 +1,3 @@
-# nbgallery
-
-[nbgallery](https://github.com/nbgallery/nbgallery) is an enterprise Jupyter Notebook sharing and collaboration platform with a goal of making it easier for data scientists and analysts to create, collaborate on, and run code-based analytics.
-
-![nbgallery screenshot](https://cloud.githubusercontent.com/assets/8132519/23445445/9f48c65e-fdf8-11e6-8ef0-d9cb7942b870.png)
-
 ## Our Story
 
 As huge fans of iPython/Jupyter, we wanted to be able to easily share and collaborate on Jupyter Notebooks across a large, distributed enterprise.  Specifically, we wanted to empower “citizen data scientists” - those who have the aptitude, curiosity, and creativity to explore data but lack the formal education and technical background of data scientists or computer programmers.
@@ -27,9 +21,3 @@ As one example, we developed and use an nbgallery extension that requires users 
 nbgallery has been under active development since November of 2015, and has been in regular use since early 2016.  A big push for our efforts in 2017 is to improve the “discoverability” of notebooks in nbgallery.  We have two areas of focus here - the first is in a recommendation system that can operate on code-based notebooks written in multiple languages.  The second is a system to measure a notebook’s “health” which can identify which notebooks have gone “stale” and no longer run as expected.  Combined, these efforts can help improve the ability for a user to easily discover and use the most relevant notebook to their needs.
 
 Ultimately, the value we see for this effort is empowering users from a wide-variety of backgrounds to create their own analytic solutions.  While users without computer programming experience might initially balk at the thought of writing or executing code-based analytics, we found Jupyter's web-based Notebook to be a very approachable platform.  And nbgallery and its intuitive integration with Jupyter makes it easier for non-technical users across an enterprise to discover and use Notebook-based analytics of interest - allowing them to mix and match pieces of code for their own purpose from other well-vetted notebooks.
-
-# Jupyter-Docker
-
-One of our use-cases involves the use of personal ephemeral (i.e. short-lived) compute environments.  As a result, the time and speed it takes to install Jupyter within that environment was a very important factor to us.  To address this we have developed a minimal [Jupyter Docker image (<250MBs)](https://hub.docker.com/r/nbgallery/jupyter-alpine/) based on Alpine Linux.  This minimal image offers a dozen language kernels, most of which are installed dynamically when the user tries to open a new notebook in that language.  This avoids potentially ballooning the size of the image by trying to “bake in” each and every language kernel.
-
-To maintain such a small image we also couldn’t include every possible language library that an analytic author might need.  Since many notebooks do require language libraries, we’ve created capabilities for both [Python](https://github.com/nbgallery/ipydeps) and [Ruby](https://github.com/nbgallery/iruby-dependencies) to allow language and OS dependencies to be installed on the fly when a user runs the notebook.  This means that users operating in these ephemeral environments do not have to know how to install packages from the command line in order to successfully execute the code within a nbgallery-hosted notebook.

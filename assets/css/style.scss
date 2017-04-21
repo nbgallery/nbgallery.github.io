@@ -1,0 +1,39 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page-header{
+  background-image: url('/assets/images/nbgallery_banner.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.img-home{  
+  width: 60%;
+  border: solid;  
+}
+
+.center-image{
+  margin: 0 auto;
+  display: block;
+}
+
+/*
+.page-header {
+  color: #fff;
+  text-align: center;
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, #1e6bb8, #fff);
+}
+
+
+.main-content {
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: normal;
+        color: #222;
+    }
+}
+*/
