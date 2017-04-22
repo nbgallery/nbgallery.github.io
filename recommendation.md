@@ -40,6 +40,10 @@ In our early discussions about how we would do personalized recommendations, we 
 
 In a nutshell, our collaborative filtering algorithm looks at users that are similar to you in order to identify notebooks that are popular with them but less popular with you.  We start with the top N users most similar to you.  For each of them, we compare their feature vector with yours - the biggest differences are notebooks that they’ve viewed much more than you have.  Each notebook gets points based on how big that difference is, and we accumulate those points across the N similar users we look at.   The top scoring notebooks are saved in your recommendations.
 
+## Similar Notebooks
+
+Our content-based algorithm starts with the largest values in your feature vector - the notebooks you use the most.  For each of the top N notebooks, we use Solr's "more like this" search to get the most similar notebooks based on content.  As with the collaborative filtering algorithm, each notebook gets points based on how similar it is to the current notebook, and then we accumulate those points across your top N most-used notebooks.  The top scoring notebooks are saved in your recommendations. 
+
 ## Group membership
 
 We use groups as a mechanism for shared ownership of notebook, but the group membership also makes a good signal for recommendations.  To do this, we identify notebooks that you haven’t viewed but are owned by a group you belong to.
