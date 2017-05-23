@@ -12,6 +12,8 @@
   <br>
 
   [![nbgallery intro video](/assets/images/nbgallery_video_thumbnail.png)](https://www.youtube.com/watch?v=enu1i8oeqMk)
+  <br>
+  *Overview video to Jupyter and nbgallery*
 
   <br>
   <br>
