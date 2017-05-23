@@ -8,8 +8,17 @@
 * [How do we keep our minimal Jupyter Docker image so small]({{ site.baseurl }}{% link minimal_image.md %})
 
   <br>
-  <iframe width="840" height="630" src="http://www.youtube.com/embed/enu1i8oeqMk" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
   <br>
   <br>
+
+  [![nbgallery intro video](/assets/images/nbgallery_video_thumbnail.png)](https://www.youtube.com/watch?v=enu1i8oeqMk)
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
 
 
