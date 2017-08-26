@@ -4,7 +4,7 @@
 
 * [Our Story]({{ site.baseurl }}{% link ourstory.md %})
 * [Our Jupyter Docker project]({{ site.baseurl }}{% link Jupyter-Docker.md %})
-* [Recommendating notebooks within nbgallery]({{ site.baseurl }}{% link recommendation.md %})
+* [Recommending notebooks within nbgallery]({{ site.baseurl }}{% link recommendation.md %})
 * [How do we keep our minimal Jupyter Docker image so small]({{ site.baseurl }}{% link minimal_image.md %})
 
   <br>
