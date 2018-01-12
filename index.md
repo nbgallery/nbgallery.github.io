@@ -6,6 +6,7 @@
 * [Our Jupyter Docker project]({{ site.baseurl }}{% link Jupyter-Docker.md %})
 * [Recommending notebooks within nbgallery]({{ site.baseurl }}{% link recommendation.md %})
 * [How do we keep our minimal Jupyter Docker image so small]({{ site.baseurl }}{% link minimal_image.md %})
+* [Exploring Code Health in a Corpus of Jupyter Notebooks]({{ site.baseurl }}{% link health_paper.md %})
 
   <br>
   <br>
