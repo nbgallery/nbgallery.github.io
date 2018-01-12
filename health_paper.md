@@ -99,7 +99,7 @@ We then defined a Usage Factor that can be applied to a health score to penalize
 
 $$UF = 0.75 + 0.25 \cdot \min(1, \log_{40} UE)$$
 
-With a single execution per user, then, we have $UF=0.75$ for 1 user, $UF=0.92$ for 2 users, $UF=0.96$ for 3 users, and $UF=0.99$ for 4 users.  We reach “full confidence” when 5 users have executed the notebook.
+With a single execution per user, then, we have \(UF=0.75\) for 1 user, \(UF=0.92\) for 2 users, \(UF=0.96\) for 3 users, and \(UF=0.99\) for 4 users.  We reach “full confidence” when 5 users have executed the notebook.
 
 ### Cell health
 
@@ -125,7 +125,7 @@ We can also use the cell health score to define Good Cell Ratio:
 
 $$GCR = \frac{\#cells\ with\ H_{cell} \ge 0.75}{\#cells}$$
 
-We could similarly define Bad Cell Ratio, but note that $BCR+GCR=1$ does not always hold, because some cells may not have been executed at all (health is unknown/undefined).  Figure 2 shows an example of a notebook with low scores for these metrics.
+We could similarly define Bad Cell Ratio, but note that \(BCR+GCR=1\) does not always hold, because some cells may not have been executed at all (health is unknown/undefined).  Figure 2 shows an example of a notebook with low scores for these metrics.
 
 ![fig_02_bad_OSR_GCR.png](/assets/images/fig_02_bad_OSR_GCR.png)
 
@@ -139,7 +139,7 @@ $$FBC = \frac{smallest\ cell\ number\ where\ H_{cell} < 0.75}{\#cells}$$
 
 $$LGC = \frac{1 + (largest\ cell\ number\ where\ H_{cell} \ge 0.75)}{\#cells}$$
 
-We number cells starting from 0, so the extra +1 in the LGC formula is to align the two values.  A notebook with a single good cell followed by a single bad cell will have $FBC=LGC=0.5$, and notebook with all good cells will have $FBC=LGC=1.0$.  A notebook with a non-critical error in an early cell might have a relatively small FBC but still have LGC near 1, while a notebook with a fatal error might have small values for both since users can’t make it to the end of the notebook.
+We number cells starting from 0, so the extra +1 in the LGC formula is to align the two values.  A notebook with a single good cell followed by a single bad cell will have $FBC=LGC=0.5$, and notebook with all good cells will have \(FBC=LGC=1.0\).  A notebook with a non-critical error in an early cell might have a relatively small FBC but still have LGC near 1, while a notebook with a fatal error might have small values for both since users can’t make it to the end of the notebook.
 
 Another method to evaluate notebook health is to consider individual user “sessions” of running the notebook and see in which cell, on average, users encounter their first error and last success.  Each time a user runs the notebook,  we can track the first (lowest-numbered) cell that fails and the last (highest-numbered) cell that succeeds, with appropriate defaults if there are no failures or no successes.  (In practice, it can be difficult to accurately separate all of a user’s sessions in the execution log data – a user might re-execute some cells or take a lunch break in the middle of the notebook.  We approximate sessions by grouping the logs by day; that is, the set of logs for each unique (user, notebook, day) tuple is assumed to be a single session.)  We average these values across all user sessions to compute First Failure Depth and Notebook Execution Depth:
 
@@ -219,7 +219,7 @@ Table 1 shows the correlation matrix of the 6 notebook health metrics.  The high
 | **FFD** | 0.68 | 0.35 | 0.87 | 0.30 | 1.00 | 0.33 |
 | **NED** | 0.51 | 0.75 | 0.30 | 0.82 | 0.33 | 1.00 |
 
-Figure 8 shows each of the 6 notebook health metrics plotted against each other, along with the distribution of each.  Note that several of the plots have a stripe along the line $x=y$.  This is another effect of the many notebooks with only one execution, where it is more likely for various metrics to have the same value.  For example, with a single execution for every cell, each successful execution results in a good health score for that cell, so GCR and OSR will be equal.  If we remove the notebooks with UF of 0.75, the $x=y$ stripes are less prevalent but still noticeable; for example, it appears somewhat common for FBC and LGC to be equal, perhaps due to a fatal cell failure that users can’t get past.
+Figure 8 shows each of the 6 notebook health metrics plotted against each other, along with the distribution of each.  Note that several of the plots have a stripe along the line \(x=y\).  This is another effect of the many notebooks with only one execution, where it is more likely for various metrics to have the same value.  For example, with a single execution for every cell, each successful execution results in a good health score for that cell, so GCR and OSR will be equal.  If we remove the notebooks with UF of 0.75, the \(x=y\) stripes are less prevalent but still noticeable; for example, it appears somewhat common for FBC and LGC to be equal, perhaps due to a fatal cell failure that users can’t get past.
 
 ![fig_08_scatter_matrix.png](/assets/images/fig_08_scatter_matrix.png)
 
