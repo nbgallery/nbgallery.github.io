@@ -147,7 +147,7 @@ $$FFD = \frac{1}{\#sessions} \sum_{sessions}\frac{smallest\ cell\ number\ with\ 
 
 $$NED = \frac{1}{\#sessions} \sum_{sessions}\frac{1 + (largest\ cell\ number\ with\ succesful\ execution)}{\#cells}$$
 
-As with LGC, the extra +1 aligns the two values such that, for example, a perfect notebook has FFD=NED=1.  FFD and NED are very similar to FBC and LGC, respectively, and we expect that the scores will be correlated – for example, it is likely that users will tend to encounter their first failure (FFD) in the lowest-numbered unhealthy cell (FBC).
+As with LGC, the extra +1 aligns the two values such that, for example, a perfect notebook has \\(FFD=NED=1\\).  FFD and NED are very similar to FBC and LGC, respectively, and we expect that the scores will be correlated – for example, it is likely that users will tend to encounter their first failure (FFD) in the lowest-numbered unhealthy cell (FBC).
 Figures 3 and 4 show some examples of these notebook-level metrics.
 
 ![fig_03_bad_NED.png](/assets/images/fig_03_bad_NED.png)
