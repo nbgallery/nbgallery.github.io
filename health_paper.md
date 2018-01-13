@@ -88,7 +88,7 @@ Because of the potential for code rot over time, a successful execution today is
 
 #### Repeatability
 
-If a single user executes a notebook one time, we don’t know if the result will repeatable.  If the same user executes it again with the same result, we gain a little confidence in repeatability.  However, we get a much bigger confidence boost from additional users – more data from a single user is nice, but the results might depend on something specific to that user.  We decided to give each additional user the same weight as 10 executions, defining User-adjusted Executions:
+If a single user executes a notebook only one time, we don’t know if the result will repeatable.  If the same user executes it again with the same result, we gain a little confidence in repeatability.  However, we get a much bigger confidence boost from additional users – more data from a single user is nice, but the results might depend on something specific to that user.  We decided to give each additional user the same weight as 10 executions, defining User-adjusted Executions:
 
 $$UE = 10(\#users - 1) + \max \bigl(1,\frac{\#executions}{\#cells}\bigr)$$
 
