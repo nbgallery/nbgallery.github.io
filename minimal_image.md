@@ -10,4 +10,6 @@ So, back to those Python data science packages.  We can’t bake them into the i
 
 That just leaves how to install these packages.  We can’t expect the user to know they need to do something beyond a pip install, and if the users has to open a terminal and install it manually, we certainly haven’t made the process any faster.  This is where [ipydeps](https://github.com/nbgallery/ipydeps) comes in.  Our ipydeps package provides a simple wrapper around pip that enables you to install packages programmatically in your Jupyter notebook.  Further, ipydeps can be configured to transparently intercept the pip command and install an apk instead.  So, for example, if you want to use numpy, all you have to do is make a call in your notebook to have ipydeps install it, and behind the scenes we’ll install the pre-compiled apk instead.
 
+---
+
 <sup>1</sup> This post was written in early 2017.  As of March 2018, version 7 of the image is about 340MB uncompressed, with both Python 2 and 3 pre-installed.
