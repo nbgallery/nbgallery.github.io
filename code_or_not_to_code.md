@@ -70,13 +70,13 @@ How are we trying to hit all 3 of these points?
 
 1.  **Question-focused**. When creating and advertising Jupyter Tuesday sessions, we start with the question the notebook answers. The session is not “COOLNOTEBOOK demo.” Instead, it’s “How can I do X?” And because we know our follow-on documentation is solid, we try to spend a good portion of the session focusing on the problem we’re solving, rather than the buttonology.
 
-2.  **Clear buttonology/documentation**. Here I’m referring a little to what we show during the session, but mostly I’m referring to what we make available (and easy to find!) after the session. In general, I’m not a fan of having a lot of buttonology during sessions because most of us aren’t going to remember all the clicks we saw when we get back to our desks anyways. A little buttonology is good—we want to become somewhat familiar with what we’re about to try ourselves. But the main time I need buttonology is when I’m back at my desk. So we provide an easy-to-navigate FAQ-style article so people can quickly get set up when they get back to their desks. 
+2.  **Clear buttonology/documentation**. Here I’m referring a little to what we show during the session, but mostly I’m referring to what we make available (and easy to find!) after the session. In general, I’m not a fan of having a lot of buttonology during sessions because most of us aren’t going to remember all the clicks we saw when we get back to our desks anyways. A little buttonology is good—we want to become somewhat familiar with what we’re about to try ourselves. But the main time I need buttonology is when I’m back at my desk. So, we provide an easy-to-navigate FAQ-style article so people can quickly get set up when they get back to their desks. 
 
     ![Clicks](/assets/images/clicks.png)
 
     In addition to guides on virtual machine setup and cell execution, a key part of what I mean by documentation includes curation of notebooks, including some that are especially basic and user friendly.
 
-    We’ve also set up an email help alias. This is used both to answer questions when people get stuck with the buttonology. But also—and maybe more importantly—to solicit recommendations for notebooks. As the notebook gallery continues to grow, curation of mission-relevant and functioning notebooks becomes even more important.
+    We’ve also set up an email help alias. This is used both to answer questions when people get stuck with the buttonology and to solicit recommendations for notebooks. As the notebook gallery continues to grow, curation of mission-relevant and functioning notebooks becomes even more important.
 
 3.  **Finally, and perhaps most importantly: workflow integration.** Where Jupyter Tuesday has succeeded, it has largely been because we hit all 3 points in our framework: we gave analysts a solution to actual problems they were having; we gave them clear instructions and easy-to-find/easy-to-follow documentation; and we showed them how a notebook was superior to whatever they were previously doing, thus making it easier to integrate Jupyter into their workflow.
 
@@ -94,17 +94,17 @@ So I’ve walked through the 3 key points for our Jupyter Tuesday overall framew
 
 **Format: Reverse agenda.** The goal of the reverse agenda is to deliver sessions that are equally relevant to all Jupyter skill levels: from those that regularly use Jupyter to those that have never seen it. We do this by spending the first 30 minutes or so answering the day’s question. What challenge does the notebook-of-the-day solve? What does the output look like and what do I do with it? What is my input?
 
-We then take a quick 30 second break so experienced Jupyter users can duck out.
+We then take a quick 30-second break so experienced Jupyter users can duck out.
 
 We spend the remaining 30 minutes or so holding an “Intro to Jupyter.” We discuss what Jupyter is, how to set up a virtual machine, and how to run a notebook. We also discuss a wide variety of notebooks and the various problems they solve. There are 2 overall goals for this session:
 1.  Help people feel comfortable and ready to go back and try Jupyter
 2.  Spark some ideas about how Jupyter might help them
 
-**Format: No code discussions allowed.** As I mentioned earlier, one of the challenges with holding a Jupyter session is that there are so many potential tangents. I try to nip this in the bud by stating a blanket rule upfront—no code discussion allowed during the session. But of course if people do have code questions, we welcome those questions after the session.
+**Format: No code discussions allowed.** As I mentioned earlier, one of the challenges with holding a Jupyter session is that there are so many potential tangents. I try to nip this in the bud by stating a blanket rule upfront—no code discussion allowed during the session. But of course, if people do have code questions, we welcome those questions after the session.
 ![Marie Kondo](/assets/images/marie_kondo.png)
 
 
-What happened when I made this rule was that a few people were like, “wait, but I wanna talk about code.” And that’s when Jupyter Thursday for Programmers was born, which I’ll touch on in a bit.
+What happened when I made this rule was that a few people said, “wait, but I wanna talk about code.” And that’s when Jupyter Thursday for Programmers was born, which I’ll touch on in a bit.
 
 **Has Jupyter Tuesday Been A Success?**
 
@@ -153,7 +153,10 @@ Because I had already been using Jupyter for a long time and—as I mentioned—
 
 So yeah, ultimately I was wrong—learning to code is not all-or-nothing. I’m now starting to find a valuable middle ground between becoming an expert Python programmer (which will likely never be my goal) and remaining code illiterate.
 
-Now I sort of think of myself as a coding toddler. So what can a toddler do? [evil toddler meme]
+Now I sort of think of myself as a coding toddler. So, what can a toddler do? 
+
+![evil toddler meme](/assets/images/take_over.png)
+
 If you were to search on my name in the notebook gallery, you’d see that most of my notebooks are private. This is both because they are fairly basic data manipulation solutions that are somewhat specific to me and also because my code is scary!
 Of my public notebooks, you’d see that many are collaborations I’ve done with coders that actually know what they’re doing.
 Even with my toddler skills, I’m already finding that coding is:
